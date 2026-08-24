@@ -1,0 +1,11 @@
+node_modules/
+dist/
+Demiurge/
+.toolchains/
+.tmp-demiurge-import/
+.env
+data/
+logs/
+coverage/
+*.log
+.DS_Store

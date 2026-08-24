@@ -1,0 +1,10 @@
+services:
+  minecraft-ai:
+    build: .
+    container_name: minecraft-ai-player
+    restart: unless-stopped
+    network_mode: host
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data

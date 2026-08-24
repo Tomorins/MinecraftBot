@@ -1,0 +1,24 @@
+[Unit]
+Description=Minecraft AI Player
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=minecraft
+Group=minecraft
+WorkingDirectory=/opt/minecraft-ai-player
+Environment=NODE_ENV=production
+EnvironmentFile=/opt/minecraft-ai-player/.env
+ExecStart=/usr/bin/node /opt/minecraft-ai-player/dist/index.js
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/minecraft-ai-player/data
+
+[Install]
+WantedBy=multi-user.target
